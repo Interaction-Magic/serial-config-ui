@@ -1,0 +1,61 @@
+{
+	"groups": [
+	  {
+		 "name": "Power button",
+		 "options": [
+			{
+			  "name": "Key",
+			  "type": "select",
+			  "value": "A",
+			  "options": "A-Z,0-9"
+			},
+			{
+			  "name": "Long press",
+			  "type": "numeric",
+			  "value": 500,
+			  "min": 0,
+			  "max": 5000
+			},
+			{
+			  "name": "Long press enabled",
+			  "type": "toggle",
+			  "value": true
+			}
+		 ]
+	  },
+	  {
+		 "name": "Option button",
+		 "options": [
+			{
+			  "name": "Key",
+			  "type": "select",
+			  "value": "B",
+			  "options": "A-Z,0-9"
+			},
+			{
+			  "name": "Long press",
+			  "type": "numeric",
+			  "value": 500,
+			  "min": 0,
+			  "max": 5000
+			},
+			{
+			  "name": "Long press enabled",
+			  "type": "toggle",
+			  "value": false
+			}
+		 ]
+	  },
+	  {
+		 "name": "Mode",
+		 "options": [
+			{
+			  "name": "Mode",
+			  "type": "select",
+			  "value": "test",
+			  "options": ["test","live","safe"]
+			}
+		 ]
+	  }
+	]
+ }
