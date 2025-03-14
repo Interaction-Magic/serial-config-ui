@@ -25,6 +25,8 @@ h1 {
 
 .settings-group {
   margin-bottom: 20px;
+  border-left: 5px solid rgba(0, 0, 0, 0.05);
+  padding-left: 15px;
 }
 
 .group-title {
@@ -35,9 +37,10 @@ h1 {
 }
 
 .option {
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
+	margin-bottom: 5px;
+	display: flex;
+	align-items: center;
+	min-height: 33px;
 }
 
 .option-name {
