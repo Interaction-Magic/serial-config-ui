@@ -43,16 +43,14 @@ h1 {
 	margin-bottom: 5px;
 	display: flex;
 	align-items: center;
-	min-height: 33px;
 	padding-bottom: 5px;
-}
-.option:not(:last-of-type){
-	border-bottom: 1px solid #ddd;
 }
 
 .option-name {
-  width: 250px;
+  width: 220px;
   font-weight: 400;
+  overflow: hidden;
+  white-space: pre;
 }
 
 select, input {

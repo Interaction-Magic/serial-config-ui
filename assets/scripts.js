@@ -5,7 +5,7 @@ let data = {}; // Initialize empty object that will be populated after fetch
 function renderSettings() {
   const container = document.getElementById('settings-container');
   
-  data.groups.forEach(group => {
+  data.groups.forEach((group, groupIndex) => {
     const groupEl = document.createElement('div');
     groupEl.className = 'settings-group';
     
@@ -14,20 +14,26 @@ function renderSettings() {
     titleEl.textContent = group.name;
     groupEl.appendChild(titleEl);
     
-    group.options.forEach(option => {
+    group.options.forEach((option, optionIndex) => {
       const optionEl = document.createElement('div');
       optionEl.className = 'option';
       
-      const nameEl = document.createElement('div');
-      nameEl.className = 'option-name';
-      nameEl.textContent = option.name;
-      optionEl.appendChild(nameEl);
+      // Create a unique ID for each input
+      const inputId = `input-${groupIndex}-${optionIndex}`;
+      
+      // Create label element instead of div
+      const labelEl = document.createElement('label');
+      labelEl.className = 'option-name';
+      labelEl.textContent = option.name;
+      labelEl.htmlFor = inputId; // Connect label to input
+      optionEl.appendChild(labelEl);
       
       // Create the appropriate input based on type
       let inputEl;
       
       if (option.type === 'select') {
         inputEl = document.createElement('select');
+        inputEl.id = inputId;
         
         // Handle different formats of options
         let optionsList = [];
@@ -46,7 +52,7 @@ function renderSettings() {
           }
           
           // If comma-separated list
-          if (option.options.includes(',')) {
+          if (option.options.includes(',') && !option.options.includes('A-Z')) {
             optionsList = option.options.split(',');
           }
         } else if (Array.isArray(option.options)) {
@@ -66,16 +72,18 @@ function renderSettings() {
         
       } else if (option.type === 'numeric') {
         inputEl = document.createElement('input');
+        inputEl.id = inputId;
         inputEl.type = 'number';
         inputEl.min = option.min;
         inputEl.max = option.max;
         inputEl.value = option.value;
 
-		  // Add step attribute - you can customize the step value
-			inputEl.step = option.step || 100; // Default to 100 if not specified in the option
+        // Add step attribute - you can customize the step value
+        inputEl.step = option.step || 100; // Default to 100 if not specified in the option
         
       } else if (option.type === 'toggle') {
         inputEl = document.createElement('input');
+        inputEl.id = inputId;
         inputEl.type = 'checkbox';
         inputEl.checked = option.value;
       }
