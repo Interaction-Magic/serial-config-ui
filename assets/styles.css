@@ -27,21 +27,16 @@ h1 {
 
 .settings-group {
   margin-bottom: 20px;
-  border-left: 5px solid rgba(0, 0, 0, 0.05);
-  padding: 10px 20px;
-  transition: background-color 0.05s ease;
-  max-width: 600px;
-}
-
-.settings-group:hover {
-  background-color: white;
+  max-width: 800px;
 }
 
 .group-title {
   font-weight: 500;
   margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.2em;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+  border-bottom: 1px solid black;
 }
 
 .option {
@@ -62,9 +57,9 @@ h1 {
 
 select, input {
   font-family: 'IBM Plex Mono', monospace;
-  padding: 6px 8px;
+  padding: 2px 4px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 3px;
   background-color: #f8f8f8;
   min-width: 120px;
 }
@@ -75,18 +70,11 @@ input[type="checkbox"] {
   min-width: auto;
 }
 
-footer {
-  text-align: center;
-  font-size: 0.9em;
-  margin-top: 40px;
-  color: #666;
-}
-
 .error {
-  background-color: #ffebee;
-  color: #c62828;
-  padding: 15px;
-  border-radius: 4px;
-  border-left: 5px solid #c62828;
-  margin-bottom: 20px;
+	background-color: #ffebee;
+	color: #c62828;
+	padding: 10px 10px 10px 15px;
+	border-left: 5px solid #c62828;
+	margin-bottom: 10px;
+	font-weight: 500;
 }

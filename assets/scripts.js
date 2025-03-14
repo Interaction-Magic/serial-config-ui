@@ -70,6 +70,9 @@ function renderSettings() {
         inputEl.min = option.min;
         inputEl.max = option.max;
         inputEl.value = option.value;
+
+		  // Add step attribute - you can customize the step value
+			inputEl.step = option.step || 100; // Default to 100 if not specified in the option
         
       } else if (option.type === 'toggle') {
         inputEl = document.createElement('input');
